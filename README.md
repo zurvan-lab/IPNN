@@ -1,4 +1,6 @@
-# InterPlanetary Nostr Network Specification (IPNN) and Documentation
+# IPNN (InterPlanetary Nostr Network)
+
+InterPlanetary Nostr Network Specification and Documentation.
 
 IPNN is a protocol base on the [nostr](https://nostr.com).
 In IPNN each node is a nostr relay which is interconnected with p2p service model.
