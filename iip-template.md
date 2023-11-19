@@ -1,100 +1,62 @@
-# IIP Guide
+---
+iip: 0
+title: IIP title
+status: draft, standard
+type: optional, required
+author: name <email@example.com>
+created: 2023-07-10
+---
 
-## Overview
+<!--
+  READ CONTRIBUTING.md BEFORE USING THIS TEMPLATE!
 
-This guide outlines the structure and key elements of an IIP document, providing a template for authors to use when submitting proposals. Each IIP is identified by a unique number and follows a specific file naming convention.
+  This is the suggested template for new IIPs. After you have filled in the requisite fields, please delete these comments.
 
-### File Naming Convention
+  Note that an IIP number _can_ be assigned by **you**. Please see CONTRIBUTING.md for more information.
 
-The file name for an IIP should adhere to the following convention:
-- The file is named with two digits, where a single-digit number is always prepended with a 0.
-- Examples:
-  - 01.md
-  - 02.md
-  - ...
-  - 100.md
-  - 121.md
+  The title should be 44 characters or less.
 
-## IIP Structure
+  TODO: Remove this comment before submitting
+-->
 
-The structure of an IIP document is designed to provide a clear and organized presentation of the proposal. Each IIP consists of the following sections:
+## Abstract
 
-### IIP Number
+<!--
+  The Abstract is a multi-sentence (short paragraph) technical summary. This should be a very terse and human-readable version of the specification section. Someone should be able to read only the abstract to get the gist of what this specification does.
 
-The IIP number is a unique identifier for the proposal and is placed at the beginning of the document, following the format `IIP-XX`, where XX is the assigned number.
+  TODO: Remove this comment before submitting
+-->
 
-Example:
-```markdown
-IIP-XX
-======
-```
+## Motivation
 
-### Title
+<!--
+  This section is optional.
 
-The title section should succinctly convey the main idea or purpose of the proposal.
+  The motivation section should include a description of any nontrivial problems the IIP solves. It should not describe how the IIP solves those problems, unless it is not immediately obvious. It should not describe why the IIP should be made into a standard, unless it is not immediately obvious.
+  
+  TODO: Remove this comment before submitting
+-->
 
-Example:
-```markdown
-[Title]
-------
-```
-### Authors
+## Specification
 
-Example:
-```
-`author:eznix` `author:kehiy`
-```
-### Status
+<!--
+  The Specification section should describe the syntax and semantics of any new feature. The specification should be detailed enough to allow competing, interoperable implementations for any of the current Pactus platforms (besu, erigon, Pactusjs, go-Pactus, nethermind, or others).
 
-Status can be `draft` or `standard` , it prepended to the list of authors 
+  It is recommended to follow RFC 2119 and RFC 8170. Do not remove the key word definitions if RFC 2119 and RFC 8170 are followed.
 
-Example:
-```
-`standard` `author:eznix86`
-```
-```
-`draft` `author:eznix86`
-```
+  TODO: Remove this comment before submitting
+-->
 
-### Introduction/Abstract
+The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in RFC 2119 and RFC 8174.
 
-The introduction or abstract section provides a brief overview of the proposal, including its purpose and significance.
+## [Additional Section]
 
-Example:
-```markdown
-[Introduction section / Abstract section]
-```
+<!--
+  REPLACE [Additional Section] TITLE WITH THE NAME OF YOUR SECTION.
 
-### Item Section
+  This section is optional.
 
-The item section is the core of the proposal and may include various subsections. One such subsection is the "Security Considerations" section, addressing potential security implications of the proposed changes.
+  An additional section may include various subsections. One such subsection is the "Security Considerations" section, addressing potential security implications of the proposed changes.
 
-Example:
-```
-## [item title section]
-[ item content]
-```
-
-## Template
-```
-IIP-XX
-======
-
-[Title here]
-------------
-
-`draft` `author:[your github username]` `author:[co-author github username]`
-
-[Abstract/Introduction here]
-
-## [Section 1]
-
-[Section 1 Content]
-
-## [Section 2]
-
-[Section 2 Content]
-
-## Security Considerations [Optional]
-
-[Security Considerations Content]
+  TODO: Remove this comment before submitting
+-->
