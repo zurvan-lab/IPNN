@@ -13,7 +13,7 @@ IPNN is an open protocol that allows [nostr](https://nostr.com) relays to synchr
 
 ## Motivation
 
-In general nostr relays won't share notes they receive with each other, your client probably can find more relays to find data you need by metadata in notes. IPNN protocol make this relays interconnected. so, when you publish some data to your relay which have IPNN implemented, your note will be published to lot of other relays automatically, who uses those relays will get your event faster and if they IPNN nostr implementation in your publish was offline, it will query it in network and send it back to you rapidly. this interconnection make things faster, more reliable, more safe and more.
+In general, nostr relays won't share notes they receive with each other. Your client may be able to find more relays to find the data you need by using the metadata in notes. IPNN protocol makes these relays interconnected. So, when you publish data to your relay with IPNN implementation, your note will be automatically published and broadcast to many other relays with IPNN implementation as well. Users of those relays will receive your event faster, and if their IPNN nodes were offline in your publish time, it will query it in the network and send it back to you quickly. This interconnection makes things faster, more reliable, more secure, and more.
 
 ## Specification
 
