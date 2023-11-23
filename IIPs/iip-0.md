@@ -122,5 +122,4 @@ Errors List:
 - not_found (when an event is not available in a node database)
 - not_supported (when a node doesn't support answering to direct queries or doesn't support the requested event kind in its Nostr relay implementation)
 
-
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in RFC 2119 and RFC 8174.
