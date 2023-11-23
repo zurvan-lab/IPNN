@@ -29,8 +29,6 @@ At the first step, each IPNN nodes is a Nostr relay. so, IPNN nodes **MUST** hav
 
 All IPNN nodes **MUST** support `tcp` and `udp` transports. supporting `quic` is **RECOMMENDED**.
 
-Port `37771`  for network is **RECOMMENDED**.
-
 ### IPNN P2P protocol
 
 The IPNN P2P protocol is based on [libp2p protocols and specifications](https://docs.libp2p.io/concepts/fundamentals/protocols/).
@@ -45,7 +43,7 @@ There are 1 topics in IPNN base protocol:
 
 The `events` topics is for broadcasting new events that each node gets from clients. every one **SHOULD** publish and **MUST** subscribe to this topic. All data in this topic **MUST** be an [IPNN message](#messages).
 
-IPNN nodes can just save, backup and maintain some specific event kinds and its **OPTIONAL**.
+IPNN nodes can *just* save, backup and maintain some *specific* event kinds and its **OPTIONAL**.
 
 #### Protocols
 
@@ -104,7 +102,7 @@ Query message **MUST** be a json message like that:
 
 [NIP reference](https://github.com/nostr-protocol/nips/blob/master/01.md#from-client-to-relay-sending-events-and-creating-subscriptions)
 
-Receiver node **SHOULD** send an Nostr event as answer.
+Receiver node **SHOULD** send one or more Nostr event as answer (more than one event **MUST** be array of events).
 
 ##### Error
 
