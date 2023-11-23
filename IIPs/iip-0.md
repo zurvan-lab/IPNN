@@ -45,6 +45,8 @@ There are 1 topics in IPNN base protocol:
 
 The `events` topics is for broadcasting new events that each node gets from clients. every one **SHOULD** publish and **MUST** subscribe to this topic. All data in this topic **MUST** be an [IPNN message](#messages).
 
+IPNN nodes can just save, backup and maintain some specific event kinds and its **OPTIONAL**.
+
 #### Protocols
 
 There is a stream protocol in IPNN like this:
