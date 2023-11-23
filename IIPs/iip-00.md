@@ -4,7 +4,7 @@ title: IPNN base protocol
 status: draft
 type: required
 author: Kayhan Alizadeh <kehiiiiya@gmail.com>
-created: 2023-02-12
+created: 0000-00-00 # after standard status
 ---
 
 ## Abstract
