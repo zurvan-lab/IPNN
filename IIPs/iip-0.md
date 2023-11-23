@@ -37,19 +37,13 @@ The IPNN P2P protocol is based on [libp2p protocols and specifications](https://
 
 #### Topics
 
-There are 2 topics in IPNN base protocol:
+There are 1 topics in IPNN base protocol:
 
 ```
 /ipnn/topic/events/v1
 ```
 
-The `events` topics is for broadcasting new events that each node gets from clients. every one **SHOULD** publish and **MUST** subscribe to this topic. All data in this topic **MUST** be an IPNN message.
-
-```
-/ipnn/topic/profiles/v1
-```
-
-The `profiles` topics is for broadcasting new profile and users a relay finds. each node **SHOULD** gossip new profiles in profiles topic. All data in this topic **MUST** be an IPNN message.
+The `events` topics is for broadcasting new events that each node gets from clients. every one **SHOULD** publish and **MUST** subscribe to this topic. All data in this topic **MUST** be an [IPNN message](#messages).
 
 #### Protocols
 
@@ -59,7 +53,7 @@ There is a stream protocol in IPNN like this:
 /ipnn/stream/v1
 ```
 
-Every node can make a stream connection with other nodes and send and receive data. they **MUST** be in IPNN messages style.
+Every node can make a stream connection with other nodes and send and receive data. they **MUST** be in [IPNN message](#messages) style.
 
 ##### Messages
 
@@ -69,27 +63,26 @@ There is 2 message types in IPNN:
 
 ###### Event
 
-Event message will be broadcasted in event topic or sent as query message response. it **MUST** be a valid Nostr event in *json*.
+Event message will be broadcasted in event topic or sent as query message response. it **MUST** be a valid [Nostr event](https://github.com/nostr-protocol/nips/blob/master/01.md#events-and-signatures) in *json*.
 
-This message is a event message when a some event is not found:
-
-```json
-{
-    "error":"not_found"
-}
-```
-
-###### Profile
-
-Profile message **MUST** contain a Nostr profile details in *json*.
-
-This message is a profile message when a profile is not found:
+Example:
 
 ```json
 {
-    "error":"not_found"
+  "id": <32-bytes lowercase hex-encoded sha256 of the serialized event data>,
+  "pubkey": <32-bytes lowercase hex-encoded public key of the event creator>,
+  "created_at": <unix timestamp in seconds>,
+  "kind": <integer between 0 and 65535>,
+  "tags": [
+    [<arbitrary string>...],
+    ...
+  ],
+  "content": <arbitrary string>,
+  "sig": <64-bytes lowercase hex of the signature of the sha256 hash of the serialized event data, which is the same as the "id" field>
 }
 ```
+
+[NIP reference](https://github.com/nostr-protocol/nips/blob/master/01.md#events-and-signatures)
 
 ###### Query
 
@@ -97,11 +90,35 @@ Query message **MUST** be a json message like that:
 
 ```json
 {
-    "type" : "profile" | "event",
-    "id" | "public_key" : "..."
+  "ids": <a list of event ids>,
+  "authors": <a list of lowercase pubkeys, the pubkey of an event must be one of these>,
+  "kinds": <a list of a kind numbers>,
+  "#<single-letter (a-zA-Z)>": <a list of tag values, for #e — a list of event ids, for #p — a list of event pubkeys etc>,
+  "since": <an integer unix timestamp in seconds, events must be newer than this to pass>,
+  "until": <an integer unix timestamp in seconds, events must be older than this to pass>,
+  "limit": <maximum number of events relays SHOULD return in the initial query>
 }
 ```
 
-Receivier node **SHOULD** send a event message or profile message as answer.
+[NIP reference](https://github.com/nostr-protocol/nips/blob/master/01.md#from-client-to-relay-sending-events-and-creating-subscriptions)
+
+Receiver node **SHOULD** send an Nostr event as answer.
+
+##### Error
+
+If a query answer was not successful for any reasons, receiver node **SHOULD** send an `Error` message as response.
+
+```json
+{
+    "error":"ipnn_error",
+    "desc" : "description" // this field is **OPTIONAL**
+}
+```
+
+Errors List:
+
+- not_found (when an event is not available in a node database)
+- not_supported (when a node doesn't support answering to direct queries or doesn't support the requested event kind in its Nostr relay implementation)
+
 
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in RFC 2119 and RFC 8174.
