@@ -49,7 +49,7 @@ The `events` topics is for broadcasting new events that each node gets from clie
 /ipnn/topic/profiles/v1
 ```
 
-The `profiles` topics is for broadcasting new profile and users a relay find. each node **SHOULD** gossip new profiles in profiles topic. All data in this topic **MUST** be an IPNN message.
+The `profiles` topics is for broadcasting new profile and users a relay finds. each node **SHOULD** gossip new profiles in profiles topic. All data in this topic **MUST** be an IPNN message.
 
 #### Protocols
 
@@ -81,7 +81,7 @@ This message is a event message when a some event is not found:
 
 ###### Profile
 
-Profile message **MUST** contains a Nostr profile details in *json*.
+Profile message **MUST** contain a Nostr profile details in *json*.
 
 This message is a profile message when a profile is not found:
 
