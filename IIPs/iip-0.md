@@ -104,6 +104,4 @@ Query message **MUST** be a json message like that:
 
 Receivier node **SHOULD** send a event message or profile message as answer.
 
-
-
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in RFC 2119 and RFC 8174.
