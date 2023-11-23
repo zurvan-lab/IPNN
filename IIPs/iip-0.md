@@ -25,6 +25,12 @@ At the first step, each IPNN nodes is a Nostr relay. so, IPNN nodes **MUST** hav
 
 > NOTE: the Nostr protocol itself doesn't focused on saving and maintaining events and it's more about communication and transmission of events. but for IPNN nodes, it's **RECOMMENDED** to save and maintain events they receive from clients or other nodes. limiting the space, backup, removing old events or some specific events and more, is **OPTIONAL**.
 
+### Network
+
+All IPNN nodes **MUST** support `tcp` and `udp` transports. supporting `quic` is **RECOMMENDED**.
+
+Port `37771`  for network is **RECOMMENDED**.
+
 ### IPNN P2P protocol
 
 The IPNN P2P protocol is based on [libp2p protocols and specifications](ipns://docs.libp2p.io/concepts/fundamentals/protocols/).
