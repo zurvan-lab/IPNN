@@ -33,7 +33,7 @@ Port `37771`  for network is **RECOMMENDED**.
 
 ### IPNN P2P protocol
 
-The IPNN P2P protocol is based on [libp2p protocols and specifications](ipns://docs.libp2p.io/concepts/fundamentals/protocols/).
+The IPNN P2P protocol is based on [libp2p protocols and specifications](https://docs.libp2p.io/concepts/fundamentals/protocols/).
 
 #### Topics
 
