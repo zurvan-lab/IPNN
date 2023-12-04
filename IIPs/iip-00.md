@@ -1,10 +1,10 @@
 ---
 iip: 0
 title: IPNN base protocol
-status: draft
+status: standard
 type: required
 author: Kayhan Alizadeh <kehiiiiya@gmail.com>
-created: 0000-00-00 # after standard status
+created: 2023-04-12
 ---
 
 ## Abstract
