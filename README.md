@@ -1,5 +1,7 @@
 # IPNN (InterPlanetary Nostr Network)
 
+![ipnn-logo](./assets/readme/ipnn.svg)
+
 InterPlanetary Nostr Network Specification and Documentation.
 
 IPNN is a protocol base on the [nostr](https://nostr.com).
