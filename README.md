@@ -1,6 +1,6 @@
-<img alt="redvin" src="./assets/readme/ipnn.svg" width="150" />
-
 # IPNN (InterPlanetary Nostr Network)
+
+![ipnn-logo](./assets/readme/ipnn.svg)
 
 InterPlanetary Nostr Network Specification and Documentation.
 
