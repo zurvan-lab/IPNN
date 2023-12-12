@@ -9,7 +9,7 @@ created: 2023-04-12
 
 ## Abstract
 
-IPNN is an open protocol that allows [Nostr](https://nostr.com) relays to synchronize, query notes from each other, broadcast notes, and more.
+IPNN is an open, decentralized protocol that allows [Nostr](https://nostr.com) relays to synchronize, query notes from each other, broadcast notes, and more in P2P service model.
 
 ## Motivation
 
